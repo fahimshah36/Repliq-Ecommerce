@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
 
-type Props = {children: React.ReactNode; title: string};
+type Props = {children?: React.ReactNode; title: string};
 const {Header, Content, Footer} = Layout;
 type MenuItem = Required<MenuProps>["items"][number];
 function getItem(
