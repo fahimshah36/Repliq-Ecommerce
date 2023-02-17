@@ -9,7 +9,7 @@ function ProductItem({product}: Props) {
     <div className="w-80 bg-white shadow rounded">
       <Link href={`/product/${product.slug}`}>
         <div
-          className="h-48 w-full bg-gray-200 flex flex-col justify-between p-4 bg-contain bg-center hover:scale-105 transition-all duration-500 cursor-pointer"
+          className="h-48 w-full bg-gray-200 flex flex-col justify-between p-4 bg-contain bg-center hover:scale-105 transition-all duration-500 cursor-pointer "
           style={{backgroundImage: `url(${product.image})`}}
         >
           <div>
@@ -72,7 +72,7 @@ function ProductItem({product}: Props) {
         </div>
 
         <button className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
-          Add to order
+          Add to Cart
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 ml-2"
