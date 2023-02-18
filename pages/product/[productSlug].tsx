@@ -23,9 +23,9 @@ function ProductDetails({}: Props) {
   }
 
   const addToCart = () => {
-    const existItem = state.cart.cartItems.find(
-      (item) => item.slug === productItem.slug
-    );
+    const existItem =
+      state.cart.cartItems &&
+      state.cart.cartItems.find((item) => item.slug === productItem.slug);
 
     let quantity = existItem ? existItem.quantity + 1 : 1;
     if (productItem.countInStock < quantity) {
@@ -45,7 +45,7 @@ function ProductDetails({}: Props) {
     <Layouts title={productItem.name}>
       <div className="inline-flex items-center mt-2">
         <Link href={`/`}>
-          <button className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             <ArrowLeftOutlined className="mr-2" />
             Go Back To Products
           </button>

@@ -79,7 +79,7 @@ export const productData: IProductDataType = {
       brand: "Casely",
       rating: 2.4,
       numReviews: 14,
-      countInStock: 20,
+      countInStock: 11,
       description: "A popular pants",
     },
   ],

@@ -27,10 +27,11 @@ function Layouts({children, title}: Props) {
   const [cartQty, setCartQty] = useState<number>();
   useEffect(() => {
     setCartQty(
-      state.cart.cartItems.reduce(
-        (total, current) => total + current.quantity,
-        0
-      )
+      state.cart.cartItems &&
+        state.cart.cartItems.reduce(
+          (total, current) => total + current.quantity,
+          0
+        )
     );
   }, [state.cart]);
 
@@ -50,7 +51,7 @@ function Layouts({children, title}: Props) {
       <Link legacyBehavior href="/cart">
         <a className="text-base font-bold text-slate-200 ">
           Cart{" "}
-          {state.cart.cartItems.length ? (
+          {state.cart.cartItems && state.cart.cartItems.length ? (
             <Badge className="p-1" count={cartQty}></Badge>
           ) : (
             <></>
@@ -87,7 +88,9 @@ function Layouts({children, title}: Props) {
                 marginRight: "1rem",
               }}
             >
-              <a className="text-lg font-bold text-slate-300">REPLIQ MART</a>
+              <Link legacyBehavior href="/">
+                <a className="text-lg font-bold text-slate-300">REPLIQ MART</a>
+              </Link>
             </div>
             <Menu theme="dark" mode="horizontal" items={items} />
           </Header>

@@ -1,8 +1,17 @@
 export interface ICartItem {
   name: string;
+  slug: string;
+  category: string;
+  image: string;
   price: number;
+  brand: string;
+  rating: number;
+  numReviews: number;
+  countInStock: number;
+  description: string;
+  isFeatured?: boolean;
+  banner?: string;
   quantity: number;
-  slug: String;
 }
 
 export interface ICartState {

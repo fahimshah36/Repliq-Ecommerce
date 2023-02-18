@@ -27,6 +27,15 @@ function reducer(state: IState, action: IAction) {
 
       return {...state, cart: {cartItems}};
     }
+    case "REMOVE_ITEM": {
+      const currentItem = action.payload as ICartItem;
+      console.log(currentItem);
+
+      const cartItems = state.cart.cartItems.filter(
+        (item) => item.slug !== currentItem.slug
+      );
+      return {...state, cart: {cartItems}};
+    }
     default:
       return state;
   }
