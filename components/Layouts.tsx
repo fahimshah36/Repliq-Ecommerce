@@ -1,8 +1,9 @@
-import React from "react";
-import {Layout, Menu, MenuProps} from "antd";
+import {Avatar, Badge, Layout, Menu, MenuProps} from "antd";
 import Head from "next/head";
 import Link from "next/link";
 import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
+import React, {useContext, useState, useEffect} from "react";
+import {Store} from "@/utils/store";
 
 type Props = {children?: React.ReactNode; title: string};
 const {Header, Content, Footer} = Layout;
@@ -22,6 +23,17 @@ function getItem(
 }
 
 function Layouts({children, title}: Props) {
+  const {state, dispatch} = useContext(Store);
+  const [cartQty, setCartQty] = useState<number>();
+  useEffect(() => {
+    setCartQty(
+      state.cart.cartItems.reduce(
+        (total, current) => total + current.quantity,
+        0
+      )
+    );
+  }, [state.cart]);
+
   const items: MenuItem[] = [
     getItem(<Link href="/">Men's Product</Link>, "Men's Product"),
     getItem(<Link href="/">Women's Product</Link>, "Women's Product"),
@@ -36,7 +48,14 @@ function Layouts({children, title}: Props) {
     getItem(<Link href="/">Home Appliances</Link>, "Home Appliances"),
     getItem(
       <Link legacyBehavior href="/cart">
-        <a className="text-base font-bold text-slate-200">Cart</a>
+        <a className="text-base font-bold text-slate-200 ">
+          Cart{" "}
+          {state.cart.cartItems.length ? (
+            <Badge className="p-1" count={cartQty}></Badge>
+          ) : (
+            <></>
+          )}
+        </a>
       </Link>,
       "Cart",
       <ShoppingCartOutlined />

@@ -3,12 +3,14 @@ import {Image} from "antd";
 import {productData} from "@/utils/productData";
 import Link from "next/link";
 import {useRouter} from "next/router";
-import React from "react";
+import React, {useContext} from "react";
 import {ArrowLeftOutlined, ShoppingCartOutlined} from "@ant-design/icons";
+import {Store} from "@/utils/store";
 
 type Props = {};
 
 function ProductDetails({}: Props) {
+  const {state, dispatch} = useContext(Store);
   const {query} = useRouter();
   const {productSlug} = query;
   const productItem = productData.products.find(
@@ -18,6 +20,13 @@ function ProductDetails({}: Props) {
   if (!productItem) {
     return <div>Product Not Found</div>;
   }
+
+  const addToCart = () => {
+    dispatch({
+      type: "CART_ADD_PRODUCT",
+      payload: {...productItem, quantity: 1},
+    });
+  };
 
   return (
     <Layouts title={productItem.name}>
@@ -55,7 +64,10 @@ function ProductDetails({}: Props) {
                 Price : BDT {productItem.price}
               </p>
             </div>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <button
+              className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              onClick={addToCart}
+            >
               Add to Cart
             </button>
           </div>
