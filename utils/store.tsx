@@ -12,7 +12,7 @@ export const Store = createContext<ContextProps>({
   dispatch: () => {},
 });
 
-function reducer(state: IState, action: IAction): any {
+function reducer(state: IState, action: IAction) {
   switch (action.type) {
     case "CART_ADD_PRODUCT": {
       const new_item = action.payload as ICartItem;

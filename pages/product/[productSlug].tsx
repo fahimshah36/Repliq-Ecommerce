@@ -6,6 +6,7 @@ import {useRouter} from "next/router";
 import React, {useContext} from "react";
 import {ArrowLeftOutlined, ShoppingCartOutlined} from "@ant-design/icons";
 import {Store} from "@/utils/store";
+import {toasterNotification} from "@/components/Comps/ToasterNotification";
 
 type Props = {};
 
@@ -22,9 +23,21 @@ function ProductDetails({}: Props) {
   }
 
   const addToCart = () => {
+    const existItem = state.cart.cartItems.find(
+      (item) => item.slug === productItem.slug
+    );
+
+    let quantity = existItem ? existItem.quantity + 1 : 1;
+    if (productItem.countInStock < quantity) {
+      quantity = quantity - 1;
+      toasterNotification(
+        "error",
+        "Product is out of stock, Please check again!!!"
+      );
+    }
     dispatch({
       type: "CART_ADD_PRODUCT",
-      payload: {...productItem, quantity: 1},
+      payload: {...productItem, quantity: quantity},
     });
   };
 
