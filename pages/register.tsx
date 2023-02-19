@@ -17,7 +17,7 @@ const RegisterPage = () => {
     setPassword(event.target.value);
   };
 
-  const handleRegister = async (e: any) => {
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/register", {

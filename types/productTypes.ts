@@ -16,3 +16,9 @@ export interface IProductType {
 export interface IProductDataType {
   products: IProductType[];
 }
+
+export interface IProductAddForm {
+  name: string;
+  description: string;
+  price: string;
+}

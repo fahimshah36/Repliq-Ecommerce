@@ -1,4 +1,4 @@
-import {Avatar, Badge, Layout, Menu, MenuProps} from "antd";
+import {Badge, Layout, Menu, MenuProps} from "antd";
 import Head from "next/head";
 import Link from "next/link";
 import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";

@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Layouts from "@/components/Layouts";
 import axios from "axios";
 import Link from "next/link";
 import {useRouter} from "next/router";
@@ -22,7 +21,7 @@ function Login({}: Props) {
     setPassword(event.target.value);
   };
 
-  const handleLogin = async (e: any) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
