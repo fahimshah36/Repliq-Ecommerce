@@ -36,8 +36,8 @@ function Layouts({children, title}: Props) {
   }, [state.cart]);
 
   const items: MenuItem[] = [
-    getItem(<Link href="/">Men's Product</Link>, "Men's Product"),
-    getItem(<Link href="/">Women's Product</Link>, "Women's Product"),
+    getItem(<Link href="/">Mens Product</Link>, "Mens Product"),
+    getItem(<Link href="/">Womens Product</Link>, "Womens Product"),
     getItem(<Link href="/">Kids Product</Link>, "Kids Product"),
     getItem(<Link href="/">Digital Product</Link>, "Digital Product"),
     getItem(<Link href="/">Home & Lifestyle</Link>, "Home & Lifestyle"),

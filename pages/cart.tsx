@@ -23,8 +23,7 @@ function Cart({}: Props) {
           0
         )
     );
-  }, cartItems);
-  console.log(cartItems);
+  }, [cartItems]);
 
   const handleRemove = (item: ICartItem) => {
     dispatch({type: "REMOVE_ITEM", payload: item});
@@ -59,8 +58,8 @@ function Cart({}: Props) {
           <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
             {cartItems &&
-              cartItems.map((item) => (
-                <div className="border rounded-md p-4">
+              cartItems.map((item, index) => (
+                <div key={index} className="border rounded-md p-4">
                   <div className="flex items-center mb-4">
                     <img
                       width={100}

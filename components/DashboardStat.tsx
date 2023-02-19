@@ -14,8 +14,8 @@ function Card({children}: Props) {
 function DashboardStat({}: Props) {
   return (
     <div className="flex gap-4 w-full">
-      <Card
-        children={
+      <Card>
+        {
           <>
             <div className="rounded-full h-12 w-12 flex items-center justify-center bg-sky-500">
               <ShoppingFilled className="text-2xl text-white" />
@@ -33,9 +33,9 @@ function DashboardStat({}: Props) {
             </div>
           </>
         }
-      />
-      <Card
-        children={
+      </Card>
+      <Card>
+        {
           <>
             <div className="rounded-full h-12 w-12 flex items-center justify-center bg-pink-500">
               <ShoppingFilled className="text-2xl text-white" />
@@ -53,9 +53,9 @@ function DashboardStat({}: Props) {
             </div>
           </>
         }
-      />
-      <Card
-        children={
+      </Card>
+      <Card>
+        {
           <>
             <div className="rounded-full h-12 w-12 flex items-center justify-center bg-orange-500">
               <ShoppingFilled className="text-2xl text-white" />
@@ -73,9 +73,9 @@ function DashboardStat({}: Props) {
             </div>
           </>
         }
-      />
-      <Card
-        children={
+      </Card>
+      <Card>
+        {
           <>
             <div className="rounded-full h-12 w-12 flex items-center justify-center bg-green-500">
               <ShoppingFilled className="text-2xl text-white" />
@@ -93,7 +93,7 @@ function DashboardStat({}: Props) {
             </div>
           </>
         }
-      />
+      </Card>
     </div>
   );
 }

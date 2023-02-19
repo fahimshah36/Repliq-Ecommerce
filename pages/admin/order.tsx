@@ -3,7 +3,7 @@ import React from "react";
 
 type Props = {};
 
-function order({}: Props) {
+function Order({}: Props) {
   return (
     <AdminLayouts title="Orders">
       <h1 className="text-2xl font-bold sm:text-3xl mb-6">Orders</h1>
@@ -62,4 +62,4 @@ function order({}: Props) {
   );
 }
 
-export default order;
+export default Order;

@@ -6,7 +6,7 @@ import React from "react";
 
 type Props = {};
 
-function admin({}: Props) {
+function Admin({}: Props) {
   return (
     <>
       <AdminLayouts title="Admin Dashboard">
@@ -20,4 +20,4 @@ function admin({}: Props) {
   );
 }
 
-export default admin;
+export default Admin;

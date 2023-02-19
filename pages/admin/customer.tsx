@@ -3,7 +3,7 @@ import React from "react";
 
 type Props = {};
 
-function customer({}: Props) {
+function Customer({}: Props) {
   return (
     <AdminLayouts title="Customers">
       <h1 className="text-2xl font-bold sm:text-3xl mb-6">Customers</h1>
@@ -68,4 +68,4 @@ function customer({}: Props) {
   );
 }
 
-export default customer;
+export default Customer;

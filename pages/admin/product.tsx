@@ -4,8 +4,8 @@ import React, {useState} from "react";
 
 type Props = {};
 
-function product({}: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+function Product({}: Props) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -110,4 +110,4 @@ function product({}: Props) {
   );
 }
 
-export default product;
+export default Product;
