@@ -54,7 +54,7 @@ function ProductDetails({}: Props) {
       <div className="flex flex-col items-center justify-center mt-8">
         <div className="w-full sm:max-w-2xl lg:max-w-4xl flex flex-col sm:flex-row sm:items-center sm:justify-center space-y-4 sm:space-y-0 sm:space-x-8 p-8 bg-white rounded-lg shadow-lg">
           <div className="flex-shrink-0">
-            <img
+            <Image
               src={productItem.image}
               alt={productItem.name}
               width={500}
